@@ -8,6 +8,8 @@ class WordMatching{
   static int score = 0;
   static char[][] board=new char[row][col];
   static char[] alphabets = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+  static String removeSpace="";
+
 
   public static void main(String[] args){
     
@@ -50,7 +52,12 @@ class WordMatching{
 
       
       myWord.findMatch(wordMatchingGame, row, col, endList);
-     
+
+
+      if(removeSpace.length()==col-3){
+        System.out.println("Game Oveor");
+        break;
+      }
     }
   }
 }

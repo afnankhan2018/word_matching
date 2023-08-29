@@ -33,10 +33,16 @@ class Word{
 
   void findMatch(WordMatching wordMatchingGame, int row, int col, ArrayList<Word> endList){
     String lastString="";
+    String removeSpace="";
     for(int i=1;i<col-2;i++){
+      if(wordMatchingGame.board[row-2][i]!=' ')removeSpace+=wordMatchingGame.board[row-2][i];
       lastString=lastString+wordMatchingGame.board[row-2][i];
     }
+
+    wordMatchingGame.removeSpace=removeSpace;
     
+
+
     int foundIndex=-1;
     String word="";
     try (BufferedReader reader = new BufferedReader(new FileReader("word.txt"))) {
